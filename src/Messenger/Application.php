@@ -36,9 +36,9 @@ class Application
 
         $app->register(new RabbitMQ, array(
             'client' => new Client,
-            'api.address' => 'http://localhost:15672',
-            'user' => 'guest',
-            'password' => 'guest'
+            'api.address' => 'http://69.195.223.58:15672',
+            'user' => 'dafitconf',
+            'password' => 'dafiti'
         ));
 
         $app->register(new MessageVault);
