@@ -35,4 +35,10 @@ class messenger {
         command => "cat /vagrant/etc/db.sql | sqlite3 /var/www/messenger/resources/messenger_test.db",
         require => Package["sqlite3"]
     }
+
+    exec { "composer":
+        cwd => "/var/www/messenger",
+        command => "php composer.phar install --no-interaction --ansi",
+        require => [Package["php5"], Package["sqlite3"], Exec["sqlite-database-creation"]]
+    }
 }
