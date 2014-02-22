@@ -1,0 +1,18 @@
+#footer {
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+  background-color: #f5f5f5;
+}
+
+#footer textarea.form-conversation {
+  width: 80%;
+  float: left;
+}
+
+#footer button.form-conversation {
+  width: 10%;
+  float: left;
+  margin-top: 15px;
+  margin-left: 60px;
+}

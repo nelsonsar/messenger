@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataset>
+    <table name="messages">
+        <column>sender</column>
+        <column>receiver</column>
+        <column>created_at</column>
+        <column>message</column>
+        <row>
+            <value>nelson</value>
+            <value>augusto</value>
+            <value>2014-02-22 14:00:20</value>
+            <value>Te devo uma breja!</value>
+        </row>
+        <row>
+            <value>augusto</value>
+            <value>nelson</value>
+            <value>2014-02-22 14:02:20</value>
+            <value>Ok!</value>
+        </row>
+    </table>
+</dataset>
+

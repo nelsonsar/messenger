@@ -1,0 +1,21 @@
+Vagrant.configure("2") do |config|
+
+  config.vm.box = "precise64"
+  config.vm.host_name = "messenger"
+  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  config.vm.synced_folder('..', "/var/www/messenger", :mount_options => ['dmode=777','fmode=777'])
+  config.vm.network "forwarded_port", guest: 8080, host: 8099
+  config.vm.network "forwarded_port", guest: 15672, host: 8076
+
+  config.vm.provider "virtualbox" do |v|
+    v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+  end
+
+  config.vm.provision :puppet do |puppet|
+    puppet.manifests_path = "manifests"
+    puppet.manifest_file = "messenger.pp"
+    puppet.module_path = "modules"
+  end
+
+end
+

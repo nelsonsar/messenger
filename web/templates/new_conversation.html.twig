@@ -1,0 +1,12 @@
+{% extends "layout.html.twig" %}
+{% block content %}
+  <form class="form-signin" role="form" method="POST" action="/conversation/">
+    <h2 class="form-signin-heading">Choose an user to talk!</h2>
+    <select name="user" class="form-control">
+      {% for user in available_users %}
+        <option>{{ user }}</option>
+      {% endfor %}
+    </select>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" {% if available_users|length == 0 %} disabled=true {% endif %}>Go talk!</button>
+  </form>
+{% endblock %}

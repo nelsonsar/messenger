@@ -1,0 +1,18 @@
+{% extends "layout.html.twig" %}
+{% block content %}
+  {% for message in messages %}
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <strong>{{ message.sender }}:</strong> {{ message.message }}
+      </div>
+    </div>
+  {% endfor %}
+{% endblock %}
+{% block footer %}
+  <form role="form" method="POST" action="/conversation/{{ receiver }}/message/new">
+    <div id="footer" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <textarea name="message" class="form-control form-conversation" rows="3" placeholder="Enter your message here"></textarea>
+      <button class="btn btn-lg btn-primary btn-block form-conversation" type="submit">Enviar</button>
+    </div>
+  </form>
+{% endblock %}

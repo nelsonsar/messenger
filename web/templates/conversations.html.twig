@@ -1,0 +1,10 @@
+{% extends "layout.html.twig" %}
+{% block content %}
+  <ul class="list-group">
+  {% if conversations|length > 0 %}
+      {% for conversation in conversations %}
+        <li class="list-group-item"><a href="/conversation/{{ conversation.conversation|e }}">{{ conversation.conversation|e }}</a></li>
+      {% endfor %}
+  {% endif %}
+  </ul>
+{% endblock %}
