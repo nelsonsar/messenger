@@ -1,8 +1,10 @@
 class messenger {
     $packages = [
+        "make",
         "php-pear",
         "php5",
         "php5-curl",
+        "php5-dev",
         "php5-sqlite",
         "sqlite3",
     ]

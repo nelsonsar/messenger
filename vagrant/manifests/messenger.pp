@@ -12,4 +12,8 @@ class { 'apt_get_update':
     stage => preinstall
 }
 
-include messenger
+class { "messenger":
+    before => Class['php-rabbitmq']
+}
+
+class { "php-rabbitmq": }
