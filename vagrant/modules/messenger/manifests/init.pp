@@ -26,11 +26,13 @@ class messenger {
 
     exec { "sqlite-database-creation":
         unless => "test -f /var/www/messenger/resources/messenger.db",
-        command => "cat /vagrant/etc/db.sql | sqlite3 /var/www/messenger/resources/messenger.db"
+        command => "cat /vagrant/etc/db.sql | sqlite3 /var/www/messenger/resources/messenger.db",
+        require => Package["sqlite3"]
     }
 
     exec { "sqlite-test-database-creation":
         unless => "test -f /var/www/messenger/resources/messenger_test.db",
-        command => "cat /vagrant/etc/db.sql | sqlite3 /var/www/messenger/resources/messenger_test.db"
+        command => "cat /vagrant/etc/db.sql | sqlite3 /var/www/messenger/resources/messenger_test.db",
+        require => Package["sqlite3"]
     }
 }
